@@ -1,0 +1,75 @@
+html {
+    font-size: 10px;
+    background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%,#4DB3DD), color-stop(100%,#52B7E1) );
+    background-size: cover;
+  }
+  
+  body,html {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  
+input {
+  
+}
+
+  #keyID, #keyIDPressed {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .wrapper {
+    flex: 1;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .showing {
+    opacity: 0;
+  }
+
+  .key {
+    border: .4rem solid rgb(16, 90, 201);
+    border-radius: .5rem;
+    margin: 1rem;
+    font-size: 1.5rem;
+    padding: 1rem .5rem;
+    transition: all .07s ease;
+    min-width: 10rem;
+    text-align: center;
+    color: white;
+    background: rgba(16,90,201,0.6);
+    text-shadow: 0 0 .5rem black;
+  }
+  
+  .playing {
+    transform: scale(1.1);
+    border-color: #ffc600;
+    box-shadow: 0 0 1rem #ffc600;
+  }
+  
+  kbd {
+    display: block;
+    font-size: 4rem;
+  }
+  
+  .sound {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: #ffc600;
+  }
+
+  footer {
+    font-size: 1.5rem;
+    width: 100%;
+    text-align: center;
+    bottom: 0px;
+  }
