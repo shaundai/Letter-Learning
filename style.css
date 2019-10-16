@@ -10,8 +10,18 @@ html {
     font-family: sans-serif;
   }
   
+.inputcontainer {
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+}
+
 input {
-  
+  margin: 0 auto;
 }
 
   #keyID, #keyIDPressed {
