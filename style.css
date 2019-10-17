@@ -29,7 +29,7 @@ input {
     display: flex;
     flex-wrap: wrap;
     flex: 1;
-    min-height: 100vh;
+    min-height: 90vh;
     align-items: center;
     justify-content: center;
   }
@@ -53,12 +53,18 @@ input {
     padding: 1rem .5rem;
     transition: all .07s ease;
     min-width: 10rem;
+    min-height: 12rem;
     text-align: center;
     color: white;
     background: rgba(16,90,201,0.6);
     text-shadow: 0 0 .5rem black;
   }
   
+  .back {
+    width: 9rem;
+    position: relative;
+  }
+
   .playing {
     transform: scale(1.1);
     border-color: #ffc600;

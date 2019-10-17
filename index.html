@@ -29,8 +29,8 @@
 
     const allCards = [
         {name: "A", example: "alligator", keycode: "65", src: "sounds/A.wav"},
-        {name: "B", example: "bumblebee", keycode: "66", src: "sounds/B.wav"},
-        {name: "C", example: "cookie", keycode: "67", src: "sounds/C.wav"},
+        {name: "B", example: "bear", keycode: "66", src: "sounds/B.wav"},
+        {name: "C", example: "cat", keycode: "67", src: "sounds/C.wav"},
         {name: "D", example: "dog", keycode: "68", src: "sounds/D.wav"},
         {name: "E", example: "elephant", keycode: "69", src: "sounds/E.wav"},
         {name: "F", example: "fox", keycode: "70", src: "sounds/F.wav"},
@@ -38,21 +38,21 @@
         {name: "H", example: "hippo", keycode: "72", src: "sounds/H.wav"},
         {name: "I", example: "ice cream", keycode: "73", src: "sounds/I.wav"},
         {name: "J", example: "jelly", keycode: "74", src: "sounds/J.wav"},
-        {name: "K", example: "kangaroo", keycode: "75", src: "sounds/K.wav"},
+        {name: "K", example: "koala", keycode: "75", src: "sounds/K.wav"},
         {name: "L", example: "lizard", keycode: "76", src: "sounds/L.wav"},
         {name: "M", example: "mouse", keycode: "77", src: "sounds/M.wav"},
         {name: "N", example: "ninja", keycode: "78", src: "sounds/N.wav"},
         {name: "O", example: "octopus", keycode: "79", src: "sounds/O.wav"},
-        {name: "P", example: "pizza", keycode: "80", src: "sounds/P.wav"},
-        {name: "Q", example: "quilt", keycode: "81", src: "sounds/Q.wav"},
-        {name: "R", example: "rhinoceros", keycode: "82", src: "sounds/R.wav"},
-        {name: "S", example: "snake", keycode: "83", src: "sounds/S.wav"},
+        {name: "P", example: "penguin", keycode: "80", src: "sounds/P.wav"},
+        {name: "Q", example: "quail", keycode: "81", src: "sounds/Q.wav"},
+        {name: "R", example: "raccoon", keycode: "82", src: "sounds/R.wav"},
+        {name: "S", example: "skunk", keycode: "83", src: "sounds/S.wav"},
         {name: "T", example: "turtle", keycode: "84", src: "sounds/T.wav"},
         {name: "U", example: "unicorn", keycode: "85", src: "sounds/U.wav"},
-        {name: "V", example: "violin", keycode: "86", src: "sounds/V.wav"},
-        {name: "W", example: "watermelon", keycode: "87", src: "sounds/W.wav"},
-        {name: "X", example: "x-ray", keycode: "88", src: "sounds/X.wav"},
-        {name: "Y", example: "yo-yo", keycode: "89", src: "sounds/Y.wav"},
+        {name: "V", example: "vulture", keycode: "86", src: "sounds/V.wav"},
+        {name: "W", example: "walrus", keycode: "87", src: "sounds/W.wav"},
+        {name: "X", example: "x-ray fish", keycode: "88", src: "sounds/X.wav"},
+        {name: "Y", example: "yak", keycode: "89", src: "sounds/Y.wav"},
         {name: "Z", example: "zebra", keycode: "90", src: "sounds/Z.wav"},
     ];
 
@@ -61,6 +61,7 @@ const createLetterCards = (letter) => {
             <kbd>${letter.name}</kbd>
             <span class="item">${letter.example}</span>
             <audio data-key="${letter.keycode}" src="${letter.src}"></audio>
+            <img class="back" src="images/${letter.name}.png" alt="${letter.example}"/>
     </div>`
 }
 
@@ -114,6 +115,8 @@ inputWindow.addEventListener("keyup", function(e){
 
     const keys = document.querySelectorAll('.key');
     keys.forEach(key => key.addEventListener('transitionend', removeTransition))
+
+    //Add card flip
 </script>
 
 </html>
