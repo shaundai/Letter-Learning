@@ -1,14 +1,16 @@
 <!doctype html>
 <html>
     <head>
-        <title>Animal Sound Generator</title>
+        <title>Letter Sounds</title>
         <link type="text/css" rel="stylesheet" href="style.css">
     </head>
 
 <body>
 
-    <div class="inputcontainer"><input placeholder="type letters only...">
-        <h1>Type a letter to hear its name or type your name in the box above!</h1>
+    <div class="inputcontainer">
+        <h1>Learn Letter Sounds</h1>
+        <h2>Type a letter to hear its name or type your name in the box below!</h2>
+        <input placeholder="type letters only...">
     </div>
     
 
@@ -117,6 +119,13 @@ inputWindow.addEventListener("keyup", function(e){
     keys.forEach(key => key.addEventListener('transitionend', removeTransition))
 
     //Add card flip
+const cards = document.querySelectorAll('.key');
+
+function showPic() {
+    this.classList.toggle('show');
+}
+
+cards.forEach(card => card.addEventListener('click', showPic));
 </script>
 
 </html>
