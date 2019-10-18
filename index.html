@@ -35,16 +35,16 @@
         {name: "C", example: "cat", keycode: "67", src: "sounds/C.wav"},
         {name: "D", example: "dog", keycode: "68", src: "sounds/D.wav"},
         {name: "E", example: "elephant", keycode: "69", src: "sounds/E.wav"},
-        {name: "F", example: "fox", keycode: "70", src: "sounds/F.wav"},
-        {name: "G", example: "grapes", keycode: "71", src: "sounds/G.wav"},
-        {name: "H", example: "hippo", keycode: "72", src: "sounds/H.wav"},
-        {name: "I", example: "ice cream", keycode: "73", src: "sounds/I.wav"},
-        {name: "J", example: "jelly", keycode: "74", src: "sounds/J.wav"},
+        {name: "F", example: "frog", keycode: "70", src: "sounds/F.wav"},
+        {name: "G", example: "gorilla", keycode: "71", src: "sounds/G.wav"},
+        {name: "H", example: "horse", keycode: "72", src: "sounds/H.wav"},
+        {name: "I", example: "iguana", keycode: "73", src: "sounds/I.wav"},
+        {name: "J", example: "jackal", keycode: "74", src: "sounds/J.wav"},
         {name: "K", example: "koala", keycode: "75", src: "sounds/K.wav"},
-        {name: "L", example: "lizard", keycode: "76", src: "sounds/L.wav"},
-        {name: "M", example: "mouse", keycode: "77", src: "sounds/M.wav"},
-        {name: "N", example: "ninja", keycode: "78", src: "sounds/N.wav"},
-        {name: "O", example: "octopus", keycode: "79", src: "sounds/O.wav"},
+        {name: "L", example: "llama", keycode: "76", src: "sounds/L.wav"},
+        {name: "M", example: "moose", keycode: "77", src: "sounds/M.wav"},
+        {name: "N", example: "newt", keycode: "78", src: "sounds/N.wav"},
+        {name: "O", example: "owl", keycode: "79", src: "sounds/O.wav"},
         {name: "P", example: "penguin", keycode: "80", src: "sounds/P.wav"},
         {name: "Q", example: "quail", keycode: "81", src: "sounds/Q.wav"},
         {name: "R", example: "raccoon", keycode: "82", src: "sounds/R.wav"},
@@ -54,7 +54,7 @@
         {name: "V", example: "vulture", keycode: "86", src: "sounds/V.wav"},
         {name: "W", example: "walrus", keycode: "87", src: "sounds/W.wav"},
         {name: "X", example: "x-ray fish", keycode: "88", src: "sounds/X.wav"},
-        {name: "Y", example: "yak", keycode: "89", src: "sounds/Y.wav"},
+        {name: "Y", example: "yellow jacket", keycode: "89", src: "sounds/Y.wav"},
         {name: "Z", example: "zebra", keycode: "90", src: "sounds/Z.wav"},
     ];
 
@@ -69,11 +69,9 @@ const createLetterCards = (letter) => {
 
 const allCardsBuilt = allCards.map(createLetterCards);
 
-
-/*grabs an array of the letter name pressed and makes them lowercase*/
 inputWindow.addEventListener("keyup", function (e){
     if (document.activeElement == !inputWindow) return;
-    const getInputText = inputWindow.value.toUpperCase().split("");
+    const getInputText = inputWindow.value.toUpperCase().replace(/[^A-Za-z]/g,"").split("");
     const findObjectsForInput = getInputText.map(letter=> {
     return allCards.find(letterName => {
      return `${letter}` === letterName.name})
@@ -83,13 +81,6 @@ inputWindow.addEventListener("keyup", function (e){
 })
 
 document.getElementById("keyID").innerHTML = allCardsBuilt;
-
-function alphaOnly(event) {
-  var key = event.keyCode;
-  return ((key >= 65 && key <= 90) || key == 8);
-};
-
-inputWindow.addEventListener("keydown", alphaOnly)
 
 inputWindow.addEventListener("keyup", function(e){
     const inputDiv = document.getElementById("keyIDPressed");
@@ -118,14 +109,6 @@ inputWindow.addEventListener("keyup", function(e){
     const keys = document.querySelectorAll('.key');
     keys.forEach(key => key.addEventListener('transitionend', removeTransition))
 
-    //Add card flip
-const cards = document.querySelectorAll('.key');
-
-function showPic() {
-    this.classList.toggle('show');
-}
-
-cards.forEach(card => card.addEventListener('click', showPic));
 </script>
 
 </html>
