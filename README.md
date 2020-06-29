@@ -11,3 +11,10 @@ Using vanilla JavaScript with a ton of event listeners and search functionality 
 See live project on Surge here: https://shaundai.github.io/Letter-Learning/
 
 ## Project Screen Shots
+![Project main page](./ScreenshotMain.png?raw=true "Main page - press any letter key to hear the name of letter")
+
+Main page - press any letter key to hear the name of letter
+
+![Search](./ScreenshotSearch.png?raw=true "Search - adding letters into the input window will make the letters appear on the screen")
+
+Search - adding letters into the input window will make the letters appear on the screen
