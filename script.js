@@ -76,13 +76,24 @@ inputWindow.addEventListener("keyup", function (e) {
 });
 
 window.addEventListener("keydown", function (e) {
-  if (document.activeElement == inputWindow) return;
-  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-  const key = document.getElementById(`${e.keyCode}`);
-  if (!audio) return;
-  audio.currentTime = 0;
-  key.classList.add("playing");
-  audio.play();
+  /**
+   * Just learned today that e.keyCode is deprecated
+   * and e.key should be used instead, although, it returns
+   * a different value than you might expect and all of the other
+   * code would need to be refactored. It's not worth it at this
+   * point and all of the browser seem to continue supporting e.keyCode
+   * for now.
+   *
+   * @author Chris Miller <https://github.com/millertchris>
+   */
+
+  const keyCode = e.keyCode;
+  const audio = document.querySelector(`audio[data-key="${keyCode}"]`);
+
+  if (audio) {
+    const key = document.getElementById(`${keyCode}`);
+    playAudio(audio);
+  }
 
   /**
    * Check to see if the enter key is pressed, if so
@@ -93,12 +104,21 @@ window.addEventListener("keydown", function (e) {
    */
   if (e.key === "Enter") {
     const audio = e.target.querySelector("audio");
-    if (!audio) return;
-    audio.currentTime = 0;
-    audio.classList.add("playing");
-    audio.play();
+    playAudio(audio);
   }
 });
+
+/**
+ * Pulled our audio pieces together into one
+ * function now that's it's use more than once.
+ *
+ * @author Chris Miller <https://github.com/millertchris>
+ */
+function playAudio(audio) {
+  audio.currentTime = 0;
+  audio.classList.add("playing");
+  audio.play();
+}
 
 function removeTransition(e) {
   if (e.propertyName !== "transform") return;
