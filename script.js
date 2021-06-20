@@ -116,7 +116,7 @@ window.addEventListener("keydown", function (e) {
  */
 function playAudio(audio) {
   audio.currentTime = 0;
-  audio.classList.add("playing");
+  audio.closest(".key").classList.add("playing");
   audio.play();
 }
 

@@ -60,11 +60,15 @@ input {
   position: relative;
   transition: all 0.07s ease;
   min-width: calc(10%);
-  max-width: 12rem;
+  max-width: 300px;
   text-align: center;
   color: white;
   background: rgba(16, 90, 201);
   text-shadow: 0 0 0.5rem black;
+}
+
+.key .item {
+  font-size: 1.5em;
 }
 
 .key:active {
